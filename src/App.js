@@ -25,7 +25,7 @@ function App() {
 
     if(consultarHome){
       const consultarApiHome = async () => {
-        const url = `http://api.openweathermap.org/data/2.5/weather?q=buenos%aires&appid=abb62160bb8bd7cb5ccd30a63f1d7398&lang=es`
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=buenos aires&appid=abb62160bb8bd7cb5ccd30a63f1d7398&lang=es`
         const respuesta = await fetch(url)
         const resultadoApi = await respuesta.json()
 
@@ -55,7 +55,7 @@ function App() {
 
     if(consultar){
       const consultarApi = async () => {
-        const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=abb62160bb8bd7cb5ccd30a63f1d7398&lang=es`
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=abb62160bb8bd7cb5ccd30a63f1d7398&lang=es`
         const respuesta = await fetch(url)
         const resultadoApi = await respuesta.json()      
   
