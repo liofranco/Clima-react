@@ -18,6 +18,7 @@ function App() {
 
   const [resultado, guardarResultado] = useState({})
   const [resultado2, guardarResultado2] = useState({})
+  const [mostrarResultado, setMostrarResultado] = useState(false)
 
   const [errorBusqueda, guardarErrorBusqueda] = useState(false)
 
@@ -41,6 +42,7 @@ function App() {
           const resultadoApi2 = await respuesta2.json()
 
           guardarResultado2(resultadoApi2)
+          setMostrarResultado(true)
         }
 
         guardarHome(false)
@@ -72,6 +74,7 @@ function App() {
             const respuesta2 = await fetch(url2)
             const resultadoApi2 = await respuesta2.json()    
             guardarResultado2(resultadoApi2)
+            setMostrarResultado(true)
           }
           consultarOneCall()
         }
@@ -92,11 +95,13 @@ function App() {
       guardarBusqueda={guardarBusqueda}
       guardarConsultar={guardarConsultar}
       guardarErrorBusqueda={guardarErrorBusqueda}
+      setMostrarResultado={setMostrarResultado}
     />
-    { errorBusqueda ? <Error /> : <Clima
+    { errorBusqueda ? <Error /> : (
+      mostrarResultado ? (<Clima
                             resultado={resultado}
                             resultado2={resultado2}
-                          /> }
+                          />) : <p>cargando...</p> ) }
     
     </>
 
