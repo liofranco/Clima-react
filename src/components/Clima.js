@@ -14,7 +14,7 @@ const Clima = ({resultado, resultado2}) => {
 
     let pronosticoSemana = resultado2.daily
 
-    if(!pronosticoSemana){
+    if(!pronosticoSemana){ 
         return null
     }
 
