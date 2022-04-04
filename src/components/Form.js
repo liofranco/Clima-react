@@ -1,6 +1,6 @@
 import React , { useRef, useState } from 'react';
 
-const Form = ({busqueda, guardarBusqueda, guardarConsultar}) => {
+const Form = ({busqueda, guardarBusqueda, guardarConsultar, setMostrarResultado}) => {
 
     const {city} = busqueda
     const [error, guardarError] = useState(false)
@@ -21,6 +21,7 @@ const Form = ({busqueda, guardarBusqueda, guardarConsultar}) => {
         } else {
             guardarError(false)
             guardarConsultar(true)
+            setMostrarResultado(false)
             inputSearch.current.blur()
         }
     }
