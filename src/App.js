@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react'
 import './App.css';
-/* import Header from './components/Header' */
 import Form from './components/Form'
 import Clima from './components/Clima'
 import Error from './components/Error'
@@ -101,8 +100,12 @@ function App() {
       mostrarResultado ? (<Clima
                             resultado={resultado}
                             resultado2={resultado2}
-                          />) : <p>cargando...</p> ) }
-    
+                          />) :
+                          <div className='loading'>
+                            <span className="loader"></span>
+                          </div> 
+    ) }
+
     </>
 
   );

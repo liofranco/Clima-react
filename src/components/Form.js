@@ -30,7 +30,7 @@ const Form = ({busqueda, guardarBusqueda, guardarConsultar, setMostrarResultado}
 
     return (
         <div className='container-form flex-center'>
-            {error ? <p>Error</p> : null}
+            {error ? <p className='error'>Ingresá una ciudad</p> : null}
             <form onSubmit={handleSubmit} className='form'>
                 <input 
                     type="text" name="city" id="city" placeholder="Buscar ciudad"
